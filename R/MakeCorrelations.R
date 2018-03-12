@@ -1,0 +1,11 @@
+# This function will
+# take all numeric columns and
+# it will create a matrix of correlations
+# and then plot it.
+
+#This is not a function yet
+
+MakeCorrelations <- function(x){
+          #Statements
+          return(x)
+}

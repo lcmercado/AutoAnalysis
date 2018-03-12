@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1520884771801.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1376552282",
+    "id" : "474DA87A",
+    "lastKnownWriteTime" : 1520884456,
+    "last_content_update" : 1520884456,
+    "path" : "~/NXP 2018/R Projects/AutoAnalysis/R/RemoveEmptyCols.R",
+    "project_path" : "R/RemoveEmptyCols.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
