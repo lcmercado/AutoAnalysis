@@ -2,10 +2,7 @@
 % Please edit documentation in R/RemoveEmptyCols.R
 \name{RemoveEmptyCols}
 \alias{RemoveEmptyCols}
-\title{Remove from data frame those columns that contain either:
-- only empty values (""),
-- only zeros (0) or
-- only NAs  (NA)}
+\title{Remove irrelevant columns from data frame}
 \usage{
 RemoveEmptyCols(x)
 }
@@ -17,9 +14,12 @@ The data frame used as an input without empty columns according to rules mention
 }
 \description{
 Remove from data frame those columns that contain either:
-- only empty values (""),
-- only zeros (0) or
-- only NAs  (NA)
+
+- only empty values ("")
+
+- only zeros (0)
+
+- only NAs (NA)
 }
 \examples{
 \dontrun{

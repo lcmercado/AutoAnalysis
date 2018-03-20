@@ -1,8 +1,9 @@
-#' Remove from data frame those columns that contain either:
-#' - only empty values (""),
-#' - only zeros (0) or
-#' - only NAs  (NA)
+#' Remove irrelevant columns from data frame
 #'
+#' @description Remove from data frame those columns that contain either:
+#' @description  - only empty values ("")
+#' @description  - only zeros (0)
+#' @description  - only NAs (NA)
 #' @param x This is a data frame.
 
 #' @return The data frame used as an input without empty columns according to rules mentioned above.
