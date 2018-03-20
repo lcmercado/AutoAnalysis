@@ -1,18 +1,25 @@
-# This function will remove from data frame
-# those columns that contain either:
-# only empty values (""),
-# only zeros (0) or
-# only NAs  (NA)
-# in every row in the column.
+#' Remove from data frame those columns that contain either:
+#' - only empty values (""),
+#' - only zeros (0) or
+#' - only NAs  (NA)
+#'
+#' @param x This is a data frame.
 
+#' @return The data frame used as an input without empty columns according to rules mentioned above.
+#' @examples
+#' \dontrun{
+#' cleanDataFrame <- RemoveEmptyCols(dataFrame)
+#'}
+#'
+#'
 
 RemoveEmptyCols <- function(x) {
-          
+
           #Make sure we are dealing with a data frame
           if (!is.data.frame(x)) {
                     stop("Object is not a data frame")
           }
-          
+
           #Detect, save colname, remove and report all columns that include ONLY empty values
           if (sapply(x, function(x)
                     all(x == "")) == 0) {
@@ -29,7 +36,7 @@ RemoveEmptyCols <- function(x) {
                               "\n"
                     )
           }
-          
+
           #Detect, save colname, remove and report all columns that include ONLY zero values
           if (sapply(x, function(x)
                     all(x == 0)) == 0) {
@@ -46,7 +53,7 @@ RemoveEmptyCols <- function(x) {
                               "\n"
                     )
           }
-          
+
           #Detect, save colname, remove and report all columns that include ONLY NAs
           if (sapply(x, function(x)
                     all(is.na(x))) == 0) {
@@ -60,7 +67,7 @@ RemoveEmptyCols <- function(x) {
                         "\n",
                         "\n")
           }
-          
+
           return(x)
 }
 
