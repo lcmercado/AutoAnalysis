@@ -25,6 +25,6 @@ This function works in tandem with other functions to programatically extract bi
 }
 \examples{
 \dontrun{
-myReportIDs <- reportsGenerator(suite,dateBegin,dateFinish,metrics, elements)
+ReportsIDs <- reportsGenerator(suite,dateBegin,dateFinish,metrics, elements)
 }
 }

@@ -9,7 +9,7 @@
 #' @return A data frame containing all the report IDs per day. They are required to obtain all trended reports during the specified time frame.
 #' @examples
 #' \dontrun{
-#' myReportIDs <- reportsGenerator(suite,dateBegin,dateFinish,metrics, elements)
+#' ReportsIDs <- reportsGenerator(suite,dateBegin,dateFinish,metrics, elements)
 #'}
 
 
@@ -33,7 +33,7 @@ reportsGenerator <- function(suite,
     data.frame(matrix(NA, nrow = timeRange, ncol = 2))
   names(VisitorActivityReports) <- c("Date", "ReportID")
 
-  #Run a loop to
+  #Run a loop to retrieve one ReportID for each day in the time period.
   for (i in 1:timeRange) {
     dailyDate <- as.character(dateBegin + i)
     print(i) #Visibility to end user
@@ -42,7 +42,7 @@ reportsGenerator <- function(suite,
 
 
     VisitorActivityReports[i, 2] <-
-      QueueTrended(
+      RSiteCatalyst::QueueTrended(
         reportsuite.id = suite,
         date.from = dailyDate,
         date.to = dailyDate,
@@ -53,5 +53,5 @@ reportsGenerator <- function(suite,
         enqueueOnly = T
       )
   }
-  return(VisitorActivityReports)
+  return(ReportsIDs)
 }
