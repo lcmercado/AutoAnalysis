@@ -1,5 +1,16 @@
 # Merge all data tables into one.
-# Handle unequal column position.
-# Handle unequal naming but similar content.
-# Provide similarity report among columns
-# Ask to merge if naming is not 100% accurate. Provide report.
+
+
+
+
+
+mergeCompatibleTables <- function(x){
+  if(is.character(x)){
+  mylist <-   grep(x, ls(pos = 1), value=T)
+  mergedDF <- do.call(rbind,  mget(mylist,envir = as.environment(1)))
+
+  return(mergedDF)
+  } else {
+    stop("Input is not a character string")
+  }
+}
