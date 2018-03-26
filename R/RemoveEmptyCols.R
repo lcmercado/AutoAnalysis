@@ -11,7 +11,7 @@
 #' \dontrun{
 #' cleanDataFrame <- RemoveEmptyCols(dataFrame)
 #'}
-#'
+#' @export
 #'
 
 RemoveEmptyCols <- function(x) {

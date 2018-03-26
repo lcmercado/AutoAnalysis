@@ -8,7 +8,7 @@
 #' visitorActivity <- reportsRetriever(dataFrameReports)
 #'}
 #'
-#'
+#' @export
 
 reportsRetriever <- function(dataFrameReports) {
   visitor.activity.list <- lapply(dataFrameReports$ReportID, tryCatch(GetReport))

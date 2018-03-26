@@ -25,6 +25,4 @@ Remove from data frame those columns that contain either:
 \dontrun{
 cleanDataFrame <- RemoveEmptyCols(dataFrame)
 }
-
-
 }

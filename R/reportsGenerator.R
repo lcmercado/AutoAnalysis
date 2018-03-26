@@ -11,7 +11,7 @@
 #' \dontrun{
 #' ReportsIDs <- reportsGenerator(suite,dateBegin,dateFinish,metrics, elements)
 #'}
-
+#' @export
 
 
 reportsGenerator <- function(suite,

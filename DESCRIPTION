@@ -2,10 +2,10 @@ Package: AutoAnalysis
 Type: Package
 Title: Functions To Automate Common Data Analysis Tasks
 Version: 0.1.0
-Author: Who wrote it
+Author: LCMM
 Maintainer: LCMM <lcmm.autoanalysis@gmail.com>
 Description: Functions to accelarate exploratory data analysis.
-License: What license is it under?
+License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 Imports:

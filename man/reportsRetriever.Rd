@@ -23,5 +23,4 @@ It is recommended to break the input data frame in chunks of 50 rows in order to
 visitorActivity <- reportsRetriever(dataFrameReports)
 }
 
-
 }

@@ -22,6 +22,4 @@ It's important to have all data frames following the same naming pattern and avo
 \dontrun{
 bindedDF <- bindTables("stringPattern")
 }
-
-
 }

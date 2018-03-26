@@ -10,7 +10,7 @@
 #' \dontrun{
 #' bindedDF <- bindTables("stringPattern")
 #'}
-#'
+#' @export
 #'
 
 
