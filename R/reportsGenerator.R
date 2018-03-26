@@ -6,7 +6,7 @@
 #' @param dateFinish End date in the following format: YYYY-MM-DD.
 #' @param metrics Vector containing up to 30 required metrics IDs.
 #' @param elements Vector containing element IDs.
-#' @param classificatoin Vector containing classification IDs.
+#' @param classification Vector containing classification IDs.
 #' @return A data frame containing all the report IDs per day. They are required to obtain all trended reports during the specified time frame.
 #' @examples
 #' \dontrun{
