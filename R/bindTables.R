@@ -1,4 +1,4 @@
-# Bind compatible data tables that have a similar name
+#' @title Bind compatible data tables that have a similar name
 #'
 #' @description The \code{bindCompatibleTables} function will take a string pattern as input and look for all variables in the Global Environment that include that pattern. Then it will try to \code{rbind} all those variables.
 #'
@@ -8,13 +8,13 @@
 #' @return All binded data frames that include in their name the string pattern given as input.
 #' @examples
 #' \dontrun{
-#' bindedDF <- bindCompatibleTables("stringPattern")
+#' bindedDF <- bindTables("stringPattern")
 #'}
 #'
 #'
 
 
-bindCompatibleTables <- function(x){
+bindTables <- function(x){
   if(is.character(x)){
   mylist <-   grep(x, ls(pos = 1), value=T)
   bindeddDF <- do.call(rbind,  mget(mylist,envir = as.environment(1)))
