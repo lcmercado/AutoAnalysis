@@ -1,5 +1,4 @@
+.gitignore
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^\data\
-data/
-^data$
+data
