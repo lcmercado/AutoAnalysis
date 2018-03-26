@@ -10,7 +10,7 @@
 #' @return A data frame containing all the report IDs per day. They are required to obtain all trended reports during the specified time frame.
 #' @examples
 #' \dontrun{
-#' ReportsIDs <- reportsGenerator(suite,dateBegin,dateFinish,metrics, elements)
+#' ReportsIDs <- reportsGenerator(suite,dateBegin,dateFinish,metrics, elements,classification)
 #'}
 #' @export
 
@@ -56,5 +56,5 @@ reportsGenerator <- function(suite,
         enqueueOnly = T
       )
   }
-  return(ReportsIDs)
+  return(VisitorActivityReports)
 }

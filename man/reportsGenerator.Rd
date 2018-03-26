@@ -18,7 +18,7 @@ reportsGenerator(suite, dateBegin, dateFinish, metrics, elements,
 
 \item{elements}{Vector containing element IDs.}
 
-\item{classificatoin}{Vector containing classification IDs.}
+\item{classification}{Vector containing classification IDs.}
 }
 \value{
 A data frame containing all the report IDs per day. They are required to obtain all trended reports during the specified time frame.
@@ -28,6 +28,6 @@ This function works in tandem with other functions to programatically extract bi
 }
 \examples{
 \dontrun{
-ReportsIDs <- reportsGenerator(suite,dateBegin,dateFinish,metrics, elements)
+ReportsIDs <- reportsGenerator(suite,dateBegin,dateFinish,metrics, elements,classification)
 }
 }
