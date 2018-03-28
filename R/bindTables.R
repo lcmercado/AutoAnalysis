@@ -17,7 +17,7 @@
 bindTables <- function(x){
   if(is.character(x)){
   mylist <-   grep(x, ls(pos = 1), value=T)
-  bindeddDF <- do.call(rbind,  mget(mylist,envir = as.environment(1)))
+  bindedDF <- do.call(rbind,  mget(mylist,envir = as.environment(1)))
 
   return(bindedDF)
   } else {
