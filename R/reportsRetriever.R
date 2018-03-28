@@ -11,9 +11,9 @@
 #' @export
 
 reportsRetriever <- function(dataFrameReports) {
+  #Check memory consumption. Maybe use dplyr instead.
   visitor.activity.list <- lapply(dataFrameReports$ReportID, tryCatch(GetReport))
-  visitor.activity.df <-
-    as.data.frame(do.call(rbind, visitor.activity.list))
+  visitor.activity.df <- as.data.frame(do.call(rbind, visitor.activity.list))
 
   #Validate report integrity
 
