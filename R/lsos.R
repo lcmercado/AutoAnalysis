@@ -10,8 +10,8 @@
 #' @export
 
 
-lsos <- function (pos = 1, pattern, order.by,
-                         decreasing=TRUE, head=TRUE, n=5) {
+lsos1 <- function (pos = 1, pattern, order.by,
+                         decreasing=FALSE, head=FALSE) {
   napply <- function(names, fn) sapply(names, function(x)
     fn(get(x, pos = pos)))
   names <- ls(pos = pos, pattern = pattern)
@@ -32,4 +32,9 @@ lsos <- function (pos = 1, pattern, order.by,
   if (head)
     out <- head(out, n)
   out
+}
+
+# shorthand
+lsos <- function(..., n=10) {
+  lsos1(..., order.by="Size", decreasing=TRUE, head=TRUE, n=n)
 }
