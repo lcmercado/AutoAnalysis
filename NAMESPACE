@@ -2,5 +2,6 @@
 
 export(RemoveEmptyCols)
 export(bindTables)
+export(lsos)
 export(reportsGenerator)
 export(reportsRetriever)
