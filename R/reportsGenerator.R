@@ -7,6 +7,7 @@
 #' @param metrics Vector containing up to 30 required metrics IDs.
 #' @param elements Vector containing element IDs.
 #' @param classification Vector containing classification IDs.
+#'@param valueStart Integer value pointing to row to start report with.
 #' @return A data frame containing all the report IDs per day. They are required to obtain all trended reports during the specified time frame.
 #' @examples
 #' \dontrun{
@@ -20,7 +21,8 @@ reportsGenerator <- function(suite,
                              dateFinish,
                              metrics,
                              elements,
-                             classification) {
+                             classification,
+                             valueStart) {
 
   #Convert dates to date format.
   #Deduct one from dateBegin to
@@ -53,6 +55,7 @@ reportsGenerator <- function(suite,
         classification = classification,
         top = 50000,
         max.attempts = 500,
+        start = valueStart,
         enqueueOnly = T
       )
   }
