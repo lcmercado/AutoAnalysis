@@ -5,7 +5,7 @@
 \title{Generate report IDs to be retrieved later}
 \usage{
 reportsGenerator(suite, dateBegin, dateFinish, metrics, elements,
-  classification)
+  classification, valueStart)
 }
 \arguments{
 \item{suite}{Report suite ID.}
@@ -19,6 +19,8 @@ reportsGenerator(suite, dateBegin, dateFinish, metrics, elements,
 \item{elements}{Vector containing element IDs.}
 
 \item{classification}{Vector containing classification IDs.}
+
+\item{valueStart}{Integer value pointing to row to start report with.}
 }
 \value{
 A data frame containing all the report IDs per day. They are required to obtain all trended reports during the specified time frame.
