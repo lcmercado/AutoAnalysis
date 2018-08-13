@@ -1,3 +1,14 @@
+#' Find missing dates between oldest available date and yesterday in a vector.
+#'
+#' @description This function will take a character vector containing dates and convert it to 'ymd' lubridate format. Then it will compare to an hypothetical vector containing all dates between the oldest date and yesterday.
+#' @param suite Character vector containing dates in YYYY-MM-DD format.
+#' @return A vector of missing dates in lubridate format.
+#' @examples
+#' \dontrun{
+#' ReportsIDs <- findMissingDates(x)
+#'}
+#' @export
+
 findMissingDates <- function(x){
   if (is.vector(x) & is.character(x)) {
 

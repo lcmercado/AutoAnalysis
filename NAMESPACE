@@ -2,6 +2,7 @@
 
 export(RemoveEmptyCols)
 export(bindTables)
+export(findMissingDates)
 export(lsos)
 export(reportsGenerator)
 export(reportsRetriever)
