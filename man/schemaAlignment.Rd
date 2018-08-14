@@ -2,7 +2,7 @@
 % Please edit documentation in R/schemaAlignment.R
 \name{schemaAlignment}
 \alias{schemaAlignment}
-\title{Identify similarity between 2 datasets and generate a new data frame that follows as much as possible the schema available in the first dataset}
+\title{schemaAlignment}
 \usage{
 schemaAlignment(x, y)
 }
@@ -12,10 +12,10 @@ schemaAlignment(x, y)
 \item{y}{a similar data frame that might include additions like new rows, new columns or changed column names and/or positions.}
 }
 \value{
-A new data frame that will include all columns that match 100% by name or by content. It follows the column arrangement of dataset #1 as closely as possible.
+A new data frame that will include all columns that match 100% by name or by content. It follows the column arrangement of dataset #1 as closely as possible. But it only keeps the content of the second dataset.
 }
-\details{
-Currently there is no option to avoid dropping non-matching columns. Later on an argument could be included to just move all non-matching columns to the last column positions of the returning data frame. This function is verbose as it tries to provide as much visibility as possible to final user as to what is being done under the hood. It will output some debugging flags as well as the name of the columns being dropped from each dataset.
+\description{
+Identify similarity between 2 datasets and generate a new one that follows as much as possible the schema available in the first dataset while keeping the info available in the second dataset.
 }
 \examples{
 \dontrun{
