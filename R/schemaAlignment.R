@@ -1,8 +1,8 @@
 #' @title Identify similarity between 2 datasets and generate a new one that follows as much as possible the schema available in the first dataset while keeping the info available in the second dataset.
 #'
-#' @description This function function will take two  data frames as input and it will try to make the second one \code{y} fit into the first one's \code{x} schema. Ideally \code{y} should be an updated messy version of \code{x}. The function will try to find matches by name first, then by content by running an iterative \code{%in%} operation. These opreations try to find a match from columns in data frame \code{x} by comparing content to columns in data frame \code{y}. Only those columns that did not match by name are considered for this second step. IF there is a match by content, the column in data frame \code{y} gets renamed according to data frame \code{x}. Then, all those non matching fields are silently dropped and columns in data frame \code{y} are ordered as closely as possible to the original column arrangement in data frame \code{x}.
+#' @description This function will take two  data frames as input and it will try to make the second one \code{y} fit into the first one's \code{x} schema. Ideally \code{y} should be an updated messy version of \code{x}. The function will try to find matches by name first, then by content by running an iterative \code{%in%} operation. These second level operations try to find a match between columns in \code{x} and \code{y}. Only those columns that did not match by name are considered for this second step. If there is a match by content, the column in data frame \code{y} gets renamed according to data frame \code{x}. Then, all those non matching fields are silently dropped and columns in data frame \code{y} are ordered as closely as possible to the original column arrangement in \code{x}.
 #'
-#' @details Currently there is no option to avoid dropping non-matching columns.This function is verbose as it tries to provide as much visibility as possible to final user as to what is being done under the hood. It will output some debugging flags as well as the name of the columns being dropped from each dataset. Still Working in Progress.
+#' @details Currently there is no option to avoid dropping non-matching columns.This function is verbose as it tries to provide as much visibility as possible to final user as to what is being done under the hood. It will output some debugging flags as well as the name of the columns being dropped from each dataset. Still work in progress.
 #'
 #' @param x a data frame.
 #' @param y a similar data frame that might include additions like new rows, new columns or changed column names and/or positions.
@@ -38,8 +38,8 @@ schemaAlignment <- function(x,y){
   potentialMatchesinY <- which(is.na(newOrder$expectedPosition))
 
 
-  #Run double loop to iterate through all potential matches in X and y until finding cases where all X are available in Y.
-  #Then, modify newOrder to be used as a guideline to rearrange Y
+  #Run double loop to iterate through all potential matches in X and Y until finding cases where all X values are available in Y.
+  #Then, modify newOrder to be used as a blueprint to rearrange Y
   for (i in 1:length(potentialMatchesinX)){
 
     for (j in 1:length(potentialMatchesinY)){
@@ -57,7 +57,7 @@ schemaAlignment <- function(x,y){
     }
   }
 
-  #Report removed columns
+  #Print columns that were removed
   removedFields <- which(is.na(newOrder$expectedPosition))
   newOrder <- newOrder[-removedFields, ]
   y <- y[ ,-removedFields]
